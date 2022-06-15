@@ -143,11 +143,74 @@ Java 8
             this keyword
             static keyword
 
-        polymorphisim
         inheretence
+
+            defining a new data type from an existing data type.
+
+            the exiting type is called super - type
+            the new one inhereting is called sub -type
+
+            super class <------------ sub class         simple inheretence
+            Rectangle <-------------- Cuboid
+
+            super1 <---- Sub1 <---- Sub2 <---- Sub3     multi-level inheretence
+            Employee <--- Manager <----- Director <--- ManagingDirector
+
+                        | <----- Sub1
+            super <-----|                               heirarchial inheretence
+                        | <----- Sub2
+
+                            | <--- Manager
+            Employee <----  |
+                            | <-- ContractEmployee
+
+                                                        hybrid inheretence
+                            | <--- Manager <----- Director <--- ManagingDirector
+            Employee <----  |
+                            | <-- ContractEmployee
+
+
+            extends keyword
+            super keyword
+
+        polymorphisim
+        
+            overloading
+
+             two or more methods belonging to the same class or classes in inheretence
+             and having same name but different params.
+
+            overriding
+             
+             two or more methods belonging to classes in inheretence
+             and having same signature (returntype methodName(parameters) )
+
         abstraction
 
+            is a machanisim where we make declarations and implementation
+            are expected later.
 
+            abstract classes
+
+                    an abstract class can not have an object allocated.
+
+            abstract methods
+
+                    an abstract method is oen that is declared but not implemented.
+                    an abstract method can be housed inside either an abstract class or
+                    an interface.
+
+            interface
+
+                    an interface is an abstract user defiend data type that
+                    can not house non-static fields.
+
+                an abstract class can not allow multiple inheretence for that matter
+                no class allows multiple inheretence where as
+
+                a class can implement multiple interfaces.
+
+                
 
     
 
