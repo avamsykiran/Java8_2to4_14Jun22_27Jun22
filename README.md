@@ -202,7 +202,7 @@ Java 8
 
             interface
 
-                    an interface is an abstract user defiend data type that
+                    an interface is an abstract user defined data type that
                     can not house non-static fields.
 
                 an abstract class can not allow multiple inheretence for that matter
@@ -210,7 +210,128 @@ Java 8
 
                 a class can implement multiple interfaces.
 
+    Package
+
+        is a unit of source code comprising of classes and other user defined data types and
+        sub-packages.
+
+        is to provide isolation or modularization of the source code.
+
+        JSE class libraries
+            java.lang       Object,String,StringBuffer,StringBuilder,System,Math
+                            Integer,Double,Short,Byte,Character,Boolean
+                            Throwable,Exception,RuntimeException
+                            Runnable,Thread
+
+            java.util       Generics and Collections and Streams and Functional Interfaces
+            java.time       Date and Tiem Api
+            java.io         Input and Output Streams
+            java.sql        JDBC
+            javax.sql       
+
+    java.lang.Object
+
+        is the defualt super class for all Java classes.
+
+        int hashcode();
+        boolean equals(Object);
+        String toString();
+
+    java.lang.System
+
+        in      java.io.InputStream     Standard Input  Stream  (keyboard)
+        err     java.io.PrintStrean     Standard Error  Stream  (VDU - monitor/projector)
+        out     java.io.PrintStrean     Standard Output Stream  (VDU - monitor/projector)
+
+    Working With Strings
+
+        java.lang.String                immutable
+        java.lang.StringBuffer          synchronized
+        java.lang.StringBuilder         non-synchronised
+
+        package com.cts.jsed.ui
+
+        public class PallendromeCheckApp{
+            public static void main(String a[]){
+
+                Scanner s = new Scanner(System.in);
+
+                str=s.next();
                 
+                StringBuffer sb= new StringBuffer(str);
+                sb.reverse();
+                
+                if(str.equals(sb.toString()){
+                    Systme.out.println("Pallendrome");
+                }
+                else{
+                    Systme.out.println("Not a Pallendrome");
+                }
+            }
+        }
+
+    java.util
+
+        Scanner
+
+        Generics
+
+            is a Abstract Data Type used to program data type independent alogirhtms
+
+            swapping a and b
+                t = b;
+                b = a;
+                a = t;
+
+                this algorithm is same when a and b are ints,strings,employees ...etc.,
+
+            public class Swapper<T> {
+                public void doSwap(T a,T b){
+                    T t;
+                    t = b;
+                    b = a;
+                    a = t;
+                }
+            }
+
+            Swapper<Employee> empSwapper = new Swapper<>();
+            Swapper<String> strSwapper = new Swapper<>();
+            Swapper<Integer> intSwapper = new Swapper<>();
+            Swapper<Double> dblSwapper = new Swapper<>();
+
+        
+        Collections
+
+            java.util.Collection    (i) all reuried methods for a collection add,remove,size,isEmpty
+                | - java.util.List  (i) Linear Data Stuctures
+                | - java.util.Set   (i) Non-Linear Data Structures (Trees)
+                        |- java.util.SortedSet  (i) Binary Search Trees
+
+            java.util.Map           (i) Dictionary a collection of (key:value) pairs
+                |- java.util.SortedMap (i) Sorted Dictionary
+
+
+            java.util.List  (i) Linear Data Stuctures
+
+                        the elements are indexed 
+                        it allows duplicate values and null values as well
+
+                        java.util.Vector        growable array and is thread safe
+                        java.util.ArrayList     growable array and is not thread safe
+                        java.util.LinkedList    doublly linked list data structure
+
+            java.util.Set   (i) Non-Linear Data Structures (Trees)
+
+                        the elements have no index.
+                        it does not allow duplicate valeus and allows only one null.
+
+                        java.util.HashSet           does not have any order of retrival
+                        java.util.LinkedHAshSet     retrives the elements in the order of insertion
+                        java.util.TreeSet           retrives the elements in the order of magnitude (sorted)
+
+            
+
+
 
     
 
