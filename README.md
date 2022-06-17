@@ -329,7 +329,33 @@ Java 8
                         java.util.LinkedHAshSet     retrives the elements in the order of insertion
                         java.util.TreeSet           retrives the elements in the order of magnitude (sorted)
 
-            
+            java.util.Comparator
+            java.lang.Comparable
+
+            java.util.Collections (c)
+
+    java.time
+
+        LocalDate
+        LocalDateTime
+        ZonedDateTime
+        Period
+        Duration
+        DateTimeFormate
+
+    Assignement
+    ----------------------------------------------------------
+
+        Consider a model
+            Loan:
+                loadAmount,interestRate,loanType,disbursedDate as proeprties
+
+        Create a List<Loan> and accept a few loan recoreds in to the list using a Scanner.
+
+        Divide that list into three different lists each list having houcing loans,personal loans and educational loans
+        exclusivly.
+
+
 
 
 
