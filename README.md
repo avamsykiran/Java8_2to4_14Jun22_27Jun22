@@ -344,8 +344,7 @@ Java 8
         DateTimeFormate
 
     Assignement
-    ----------------------------------------------------------
-
+    
         Consider a model
             Loan:
                 loadAmount,interestRate,loanType,disbursedDate as proeprties
@@ -357,7 +356,74 @@ Java 8
 
 
 
+    Exception Handling
 
+        is a situation that mostly represents an illegal or unacceptable input or evetn, which
+        may tend to break the application.
+
+        to detect catch and do an alternate flow in case of an exception occuring is called
+        exception handling.
+
+        java.lang.Throwable
+                |- Error
+                |- Exception
+                        |
+                        |- any sub - clasees from Exception - Checked Exception
+                        |
+                        |- RuntimeException
+                                    |
+                                    |- any sub classes from RuntimeException - Unchecked Exception
+
+        Checked Exception are expected to be handled without which the compilation is never success.
+
+        UnChecked Exception are not expected to be handled.
+
+
+        unchecked exception are expected to be avoided but not handled.
+
+            class EmployeeService{
+                public void incrementSalary(Employee emp,double value){
+                    if(emp!=null)
+                        emp.setSalary(emp.getSalary()+value);
+                }
+            }
+
+        Checked Exceptions are handled using try...catch statement
+
+            try{
+                //regular code that may throw an exception
+            }catch(ExceptionType expObj){
+                //alternate step to be taken in case of that exepction occur
+            }catch(ExceptionType1 expObj){
+                //alternate step to be taken in case of that exepction occur
+            }catch(ExceptionType2 expObj){
+                //alternate step to be taken in case of that exepction occur
+            }catch(ExceptionType3 expObj){
+                //alternate step to be taken in case of that exepction occur
+            }.. finally {
+                //execute a pice of code irrespective of the exception occuring or not.
+            }
+
+            try{
+                //regular code that may throw an exception
+            }catch(ExceptionType | ExceptionType1 | ExceptionType2 expObj | ExceptionType3 expObj){
+                //alternate step to be taken in case of that exepction occur
+            }.. finally {
+                //execute a pice of code irrespective of the exception occuring or not.
+            }
+
+
+            try(Connection con = DriverManager.getConnection(....)){
+                    //make use of the connection
+            }catch(SQLException exp){
+                //.....
+            }
+
+            the connection gets closed automatically when the try statemnt is done.
+
+        'throw' keyword is sued to raise our own exception (user defiend exception)
+        'throws' keyword is used to transfer an exception from a method to its caller method.
+        
 
     
 
