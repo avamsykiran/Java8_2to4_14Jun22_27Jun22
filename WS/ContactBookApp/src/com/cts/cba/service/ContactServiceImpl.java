@@ -1,5 +1,6 @@
 package com.cts.cba.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.cts.cba.dao.ContactDao;
@@ -15,28 +16,47 @@ public class ContactServiceImpl implements ContactService{
 		this.contactDao = new ContactDaoImpl();
 	}
 	
+	private boolean isValidContact(Contact c) throws InvalidContactException {
+		List<String> errors = new ArrayList<String>();
+		
+		if(c.getContactId()<=0) {
+			errors.add("Contact Id is not expected to be zero or negative");
+		}
+			
+		if(c.getFullName()==null || c.getFullName().length()==0) {
+			errors.add("Full Naem can not blank");
+		}
+		
+		if(!errors.isEmpty()) {
+			throw new InvalidContactException(errors.toString());
+		}
+		
+		return errors.isEmpty();
+	}
+	
 	@Override
 	public List<Contact> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return contactDao.getAll();
 	}
 
 	@Override
 	public Contact getById(long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return contactDao.getById(id);
 	}
 
 	@Override
 	public Contact add(Contact contact) throws InvalidContactException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		if(isValidContact(contact)) {
+			contactDao.add(contact);
+		}
+		
+		return contact;
 	}
 
 	@Override
 	public void deleteById(long id) {
-		// TODO Auto-generated method stub
-		
+		contactDao.deleteById(id);
 	}
 
 }
