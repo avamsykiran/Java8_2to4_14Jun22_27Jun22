@@ -425,5 +425,35 @@ Java 8
         'throws' keyword is used to transfer an exception from a method to its caller method.
         
 
-    
+    IO Streams
+
+        java.io
+            InputStream  
+                FileInputStream
+                ObjectInputStream   
+            
+            OutputStream
+                FileOutputStream
+                ObjectOutputStream
+
+            Reader
+                InputStreamReader
+                BufferedReader
+            Writer
+                PrintWriter
+
+            IOException
+            File
+
+        java.nio
+            Paths
+            Files
+
+    Multi-Threading            
+
+        java.lang.Runnable
+            |
+            |- java.lang.Thread
+
+                    
 

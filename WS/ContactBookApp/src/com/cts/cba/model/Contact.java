@@ -1,9 +1,12 @@
 package com.cts.cba.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Contact {
+public class Contact implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	private long contactId;
 	private String fullName;
 	private String mailId;

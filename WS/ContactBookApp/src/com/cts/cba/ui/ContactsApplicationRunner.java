@@ -30,7 +30,7 @@ public class ContactsApplicationRunner {
 			System.out.print("Choice? ");
 			int ch = kbin.nextInt();
 
-			if (ch <= 0 || ch >= Menu.values().length) {
+			if (ch < 0 || ch >= Menu.values().length) {
 				System.out.println("Invlaid choice");
 				continue;
 			}
@@ -76,7 +76,7 @@ public class ContactsApplicationRunner {
 		System.out.print("\nMobile: ");
 		String mobile = kbin.next();
 		System.out.print("\nDateOfBirth: ");
-		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("M/d/yyyy");
+		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		LocalDate dateOfBirth = LocalDate.parse(kbin.next(), dateFormat);
 		Contact c;
 		try {

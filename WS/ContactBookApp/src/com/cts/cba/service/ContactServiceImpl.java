@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.cts.cba.dao.ContactDao;
+import com.cts.cba.dao.ContactDaoBinaryFileImpl;
 import com.cts.cba.dao.ContactDaoImpl;
 import com.cts.cba.exceptions.InvalidContactException;
 import com.cts.cba.model.Contact;
@@ -13,7 +14,8 @@ public class ContactServiceImpl implements ContactService{
 	private ContactDao contactDao;
 	
 	public ContactServiceImpl() {
-		this.contactDao = new ContactDaoImpl();
+		//this.contactDao = new ContactDaoImpl();
+		this.contactDao = new ContactDaoBinaryFileImpl();
 	}
 	
 	private boolean isValidContact(Contact c) throws InvalidContactException {
