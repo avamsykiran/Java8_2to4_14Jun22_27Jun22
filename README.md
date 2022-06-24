@@ -456,4 +456,77 @@ Java 8
             |- java.lang.Thread
 
                     
+    Stream API is a way of java to support functional programming.
 
+        Prepare Fresh Lemon Juice
+
+         preapreJuice() {
+            Pick a lemon
+            Squezze the lemon in to a glass
+            That glass must be mixed with Soda
+            That glass must be mixed with sugar
+            And then add some ice
+            And serve the juice
+        }
+
+        Prepare Fresh Lemon Juice via Fucntional Programming Approach
+        
+            picklemon() {}
+                squeezeLemon() {}
+                    mixSoda() {}
+                        addSugar() {}
+                            addIce() {}
+                                serve() {}
+
+        Functional Interfaces and lambda expressions
+
+            a functional interface is an interface that has only one abstract function.
+
+            @FunctionalInterface
+            interface Sum {
+                double doSum(double a,double b);
+            }
+
+            class SumImpl implements Sum {
+                public double doSum(double a,double b){
+                    return a+b;
+                }
+            }
+
+            Sum s = new SumImpl();
+            s.doSum(10,20);
+
+            Sum s2 = (n1,n2) -> n1+n2;
+            s2.doSum(10,20);
+
+            () -> returnValue
+            (param1,param2) -> returnValue
+            (param1,param2) -> {
+                //some code
+                returnValue;
+            }
+
+            java.util.function
+                in-built functional interfaces
+
+                consumer            whose method do not return a value but accepts one
+                supplier            whose method do not accept a valeu but returns one
+                predicate           whose method returns boolean always
+                functional          
+
+            java.util.stream.Stream
+
+                the stream class represents a flow data from a variaty of sources.
+
+                Stream s = Stream.of("Vamsy","Komal","Srinu");
+                Stream s1 = Arrays.stream(int[] {12,34,56,88,90})
+                Stream s2 = listObj.stream();
+                Stream s3 = setObj.stream();
+
+
+                Stream::
+                    forEach(consumer)           returns nothing but execute the cosnumer on each value in the stream
+                    collect(Collector)          to collect the values in a stream into a list or a set
+                    map(oparator)               to return a new stream containing transformed valuse of the old stream.
+                    reduce(BinaryOperator)      to reduce the whole stream into a single value using the bianry operator
+                    filter(predicate)           to return a new stream of filtered values of the old stream using the predicate
